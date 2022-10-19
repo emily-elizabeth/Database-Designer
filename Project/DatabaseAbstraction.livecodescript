@@ -58,13 +58,34 @@ on DBInsert databaseID, tableName, columnNames, insertValues
 end DBInsert
 
 
-on DBUpdate databaseID, tableName, columnNames, values
+on DBUpdate databaseID, tableName, values, where
    try
       if (_DBIsOpen(databaseID)) then
-         
+         local sql
+         put "UPDATE" && tableName && "SET " into sql
+         repeat for each line columnName in the keys of values
+            put columnName & "=" & _DBQuote(values[columnName]) & COMMA & SPACE after sql
+         end repeat
+         delete char -2 of sql
+         put "WHERE" && (line 1 of the keys of where) & "=" & where[line 1 of the keys of where] after sql
+         revExecuteSQL databaseID, sql
       end if
    end try
 end DBUpdate
+
+
+on DBDelete databaseID, tableName, where
+   try
+      if (_DBIsOpen(databaseID)) then
+         local sql
+         put "DELETE FROM" && tableName && "WHERE " into sql
+         put (line 1 of the keys of where) & "=" & _DBQuote(where[line 1 of the keys of where]) after sql
+         revExecuteSQL databaseID, sql
+      end if
+   end try
+end DBDelete
+
+
 
 
 
@@ -78,3 +99,12 @@ function _DBIsOpen databaseID
       return (databaseID is among the items of openDatabases)
    end if
 end _DBIsOpen
+
+
+function _DBQuote values
+   if (values is a number) then
+      return values
+   else
+      return QUOTE & values & QUOTE
+   end if
+end _DBQuote
