@@ -86,6 +86,27 @@ on DBDelete databaseID, tableName, where
 end DBDelete
 
 
+on DBAlterTableAddColumn databaseID, tableName, values
+   try
+      if (_DBIsOpen(databaseID)) then
+         local sql
+         put "ALTER TABLE" && tableName && "ADD" && values[1] into sql
+         revExecuteSQL databaseID, sql
+      end if
+   end try
+end DBAlterTableAddColumn
+
+
+on DBAlterTableDropColumn databaseID, tableName, values
+   try
+      if (_DBIsOpen(databaseID)) then
+         local sql
+         put "ALTER TABLE" && tableName && "DROP COLUMN :1" into sql
+         put sql
+      end if
+   end try
+end DBAlterTableDropColumn
+
 
 
 
