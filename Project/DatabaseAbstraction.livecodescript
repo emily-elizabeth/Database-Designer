@@ -12,18 +12,17 @@ function DBOpenSQL filePath
 end DBOpenSQL
 
 
-on DBCreateTable databaseID, tableName, values
+command DBCreateTable databaseID, tableName, values
    try
       if _DBIsOpen(databaseID) then
          local sql
          put "create table" && tableName && "(" into sql
          repeat with i = 1 to (the number of lines in the keys of values)
-            --            put ":" & i & COMMA & SPACE after sql
             put values[i] & COMMA & SPACE after sql
          end repeat
          delete char -2 to -1 of sql
          put ")" after sql
-         revExecuteSQL databaseID, sql, "values"
+         revExecuteSQL databaseID, sql
       else
          throw "Database is not open."
       end if
@@ -33,7 +32,7 @@ on DBCreateTable databaseID, tableName, values
 end DBCreateTable
 
 
-on DBInsert databaseID, tableName, columnNames, insertValues
+command DBInsert databaseID, tableName, columnNames, insertValues
    try
       if _DBIsOpen(databaseID) then
          local sql
@@ -58,7 +57,7 @@ on DBInsert databaseID, tableName, columnNames, insertValues
 end DBInsert
 
 
-on DBUpdate databaseID, tableName, values, where
+command DBUpdate databaseID, tableName, values, where
    try
       if (_DBIsOpen(databaseID)) then
          local sql
@@ -74,7 +73,7 @@ on DBUpdate databaseID, tableName, values, where
 end DBUpdate
 
 
-on DBDelete databaseID, tableName, where
+command DBDelete databaseID, tableName, where
    try
       if (_DBIsOpen(databaseID)) then
          local sql
@@ -86,7 +85,7 @@ on DBDelete databaseID, tableName, where
 end DBDelete
 
 
-on DBAlterTableAddColumn databaseID, tableName, values
+command DBAlterTableAddColumn databaseID, tableName, values
    try
       if (_DBIsOpen(databaseID)) then
          local sql
@@ -97,16 +96,48 @@ on DBAlterTableAddColumn databaseID, tableName, values
 end DBAlterTableAddColumn
 
 
-on DBAlterTableDropColumn databaseID, tableName, values
+command DBAlterTableDropColumn databaseID, tableName, values
    try
       if (_DBIsOpen(databaseID)) then
          local sql
          put "ALTER TABLE" && tableName && "DROP COLUMN :1" into sql
-         put sql
+         revExecuteSQL databaseID, sql, values
       end if
    end try
 end DBAlterTableDropColumn
 
+
+command DBAlterTableModifyColumn databaseID, tableName, values
+   try
+      if (_DBIsOpen(databaseID)) then
+         local sql
+         put "ALTER TABLE" && tableName && "MODIFY COLUMN" && values[1] into sql
+         revExecuteSQL databaseID, sql
+      end if
+   end try
+end DBAlterTableModifyColumn
+
+
+command DBAlterTableRenameTable databaseID, tableName, newTableName
+   try
+      if (_DBIsOpen(databaseID)) then
+         local sql 
+         put "ALTER TABLE" && tableName && "RENAME TO" && newTableName into sql
+         revExecuteSQL databaseID, sql
+      end if
+   end try
+end DBAlterTableRenameTable
+
+
+command DBAlterTableRenameColumn databaseID, tableName, columnName, newColumnName
+   try
+      if (_DBIsOpen(databaseID)) then
+         local SQL
+         put "ALTER TABLE" && tableName && "RENAME COLUMN" && columnName && "TO" && newColumnName into sql
+         revExecuteSQL databaseID, sql
+      end if
+   end try
+end DBAlterTableRenameColumn
 
 
 
