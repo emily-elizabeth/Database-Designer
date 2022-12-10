@@ -41,14 +41,14 @@ on DBDCreateNewBlankTemplate
    put it into newStackLongID
    
    // copy the tools group
-   //if (there is no group "DatabaseDesignerTools") then
+   --if (there is no group "DatabaseDesignerTools") then
    copy group "DatabaseDesignerTools" of stack "DatabaseDesignerToolsUI" to newStackLongID
    local newGroupLongID
    put it into newGroupLongID
-   set the lockLoc of newGroupLongID to TRUE
-   set the left of newGroupLongID to (the width of newStackLongID - the width of newGroupLongID)
-   set the height of of newGroupLongID to (the height of newStackLongID)
-   //end if
+   set the right of newGroupLongID to (the width of newStackLongID)
+   set the height of newGroupLongID to (the height of newStackLongID + 1)
+   set the height of button "ButtonBackground" of newGroupLongID to (the height of newGroupLongID)
+   --end if
    
    // show the stack
    show stack newStackLongID
