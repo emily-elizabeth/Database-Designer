@@ -1,3 +1,3 @@
 # Database-Designer
  
-A visual editor for databases.
+Visual database designer for SQLite
