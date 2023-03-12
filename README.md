@@ -2,4 +2,5 @@
  
 Visual database designer for SQLite
 
-![image](https://user-images.githubusercontent.com/95830062/224460045-3a5000b4-5621-4a45-be7d-9dcd6e399f9e.png)
+<img width="867" alt="image" src="https://user-images.githubusercontent.com/95830062/224519367-02a6d54f-387a-4400-a8e4-b7bf96459c59.png">
+
