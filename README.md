@@ -1,6 +1,6 @@
 # Database-Designer
  
-Visual database designer for SQLite
+Visual database designer for SQLite and MySQL
 
 Database Designer is an intuitive app designed to simplify data structuring. It provides a GUI-based editor for easy construction and editing of database contents, including labels, fields, and checkboxes. It's perfect for beginners and those seeking a straightforward way to create and manage digital databases. With its minimalist design and simple options, Database Designer makes creating your first database a breeze.
 
