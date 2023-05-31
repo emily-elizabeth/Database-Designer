@@ -8,6 +8,7 @@ This version emphasizes the user-friendly interface, the GUI-based editor, and t
 
 <img width="530" alt="Splash screen" src="https://user-images.githubusercontent.com/95830062/229255616-71642439-4e41-433d-a57a-dfb188c1cfda.png">
 
+<img width="530" alt="image" src="https://github.com/emily-elizabeth/Database-Designer/assets/95830062/c077763d-b4ab-4d6c-81ae-1ce57899ed10">
 
 <img width="867" alt="Browse mode" src="https://user-images.githubusercontent.com/95830062/229255318-03d9d4fa-94b1-4b6c-be86-db94627ff92b.png">
 
