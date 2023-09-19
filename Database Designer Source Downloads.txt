@@ -1,0 +1,17 @@
+Source Code
+https://github.com/emily-elizabeth/Database-Designer
+
+Linux 32-bit (x86)
+https://archive.org/download/live-code-community-linux-x32/LiveCodeCommunityInstaller-9_6_3-Linux.x86
+
+Linux 64-bit (x86)
+https://archive.org/download/live-code-community-linux-x64/LiveCodeCommunityInstaller-9_6_3-Linux.x64
+
+macOS 64-bit (x86)
+https://archive.org/download/live-code-community-installer-mac/LiveCodeCommunity-9_6_3-Mac.dmg
+
+Windows 32-bit (x86)
+https://archive.org/download/live-code-community-installer-windows-x86-x64/Windows%2032-Bit/LiveCodeCommunityInstaller-9_6_3-Windows-x86.exe
+
+Windows 64-bit (x86)
+https://archive.org/download/live-code-community-installer-windows-x86-x64/Windows%2064-Bit/LiveCodeCommunityInstaller-9_6_3-Windows-x86_64.exe
