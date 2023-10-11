@@ -7,7 +7,7 @@ https://archive.org/download/live-code-community-linux-x32/LiveCodeCommunityInst
 Linux 64-bit (x86)
 https://archive.org/download/live-code-community-linux-x64/LiveCodeCommunityInstaller-9_6_3-Linux.x64
 
-macOS 64-bit (x86)
+macOS 64-bit (x86) [no longer works on Sonoma]
 https://archive.org/download/live-code-community-installer-mac/LiveCodeCommunity-9_6_3-Mac.dmg
 
 Windows 32-bit (x86)
