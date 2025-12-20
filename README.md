@@ -7,6 +7,7 @@ Database Designer is an intuitive app designed to simplify data structuring. It 
 This version emphasizes the user-friendly interface, the GUI-based editor, and the simplicity of creating and managing databases, which are key features and advantages of the Database Designer app.
 
 https://www.softpedia.com/get/Internet/Servers/Database-Utils/Database-Designer-E.shtml
+https://www.fosshub.com/DatabaseDesigner.html (they only have 1.1.0)
 
 <img width="530" alt="Splash Screen" src="https://github.com/emily-elizabeth/Database-Designer/assets/95830062/9d2923a3-fd92-43a7-b2b4-078df8723b1b">
 
